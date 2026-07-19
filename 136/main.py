@@ -9,10 +9,12 @@ def task(x):
             l = mid
         else:
             r = mid
-    if r + 1 < n and arr[r] == x:
-        return arr[r + 1]
-    elif r < n and arr[r] > x:
-        return arr[r]
+    if r - 1 >= 0 and r < n and arr[r] == x:
+        return r
+    elif r < n and arr[r - 1] < x:
+        return r
+    if r == n:
+        return r
     else:
         return "NO SOLUTION"
 

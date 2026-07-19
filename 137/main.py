@@ -5,14 +5,16 @@ def task(x):
     l, r = -1, n
     while l + 1 < r:
         mid = (l + r) // 2
-        if arr[mid] < x:
+        if arr[mid] > x:
             l = mid
         else:
             r = mid
-    if r + 1 < n and arr[r] == x:
-        return arr[r + 1]
-    elif r < n and arr[r] > x:
-        return arr[r]
+    if r < n and arr[r] < x:
+        return r + 1
+    elif r + 1 < n and arr[r] == x:
+        return r + 1
+    elif r + 1 == n:
+        return r + 1
     else:
         return "NO SOLUTION"
 
